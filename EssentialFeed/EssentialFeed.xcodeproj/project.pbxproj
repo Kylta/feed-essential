@@ -27,6 +27,7 @@
 		46580A8E231FC823007027C5 /* LocalFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46580A8D231FC823007027C5 /* LocalFeedImage.swift */; };
 		4698657A231FEFD400F67135 /* LoadFeedFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46986579231FEFD400F67135 /* LoadFeedFromCacheUseCaseTests.swift */; };
 		4698657D232001FB00F67135 /* FeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4698657C232001FB00F67135 /* FeedStoreSpy.swift */; };
+		4698657F23256F3C00F67135 /* ValidateFeedCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4698657E23256F3C00F67135 /* ValidateFeedCacheUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		46580A8D231FC823007027C5 /* LocalFeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImage.swift; sourceTree = "<group>"; };
 		46986579231FEFD400F67135 /* LoadFeedFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		4698657C232001FB00F67135 /* FeedStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpy.swift; sourceTree = "<group>"; };
+		4698657E23256F3C00F67135 /* ValidateFeedCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedCacheUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				4698657B232001F200F67135 /* Helpers */,
 				46580A84231EF7A3007027C5 /* CacheFeedUseCaseTests.swift */,
 				46986579231FEFD400F67135 /* LoadFeedFromCacheUseCaseTests.swift */,
+				4698657E23256F3C00F67135 /* ValidateFeedCacheUseCaseTests.swift */,
 			);
 			path = "Feed Cache";
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4698657F23256F3C00F67135 /* ValidateFeedCacheUseCaseTests.swift in Sources */,
 				460420DE23140C450094E2DE /* LoadFeedFromRemoteUseCaseTests.swift in Sources */,
 				460420E8231533510094E2DE /* URLSessionHTTPClientTests.swift in Sources */,
 				4698657D232001FB00F67135 /* FeedStoreSpy.swift in Sources */,
