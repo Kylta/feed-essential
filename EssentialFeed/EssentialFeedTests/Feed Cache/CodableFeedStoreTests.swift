@@ -170,30 +170,20 @@ class CodableFeedStoreTests: XCTestCase {
     
     func test_delete_hasNoSideEffectsOnEmptyCache() {
         let sut = makeSUT()
-        let exp = expectation(description: "Wait for deletion completion")
         
-        sut.deleteCachedFeed { deletionError in
-            XCTAssertNil(deletionError, "Expected empty cache deletion to succeeds")
-            exp.fulfill()
-        }
+        let deletionError = delete(from: sut)
         
-        wait(for: [exp], timeout: 1.0)
-        
+        XCTAssertNil(deletionError, "Expected empty cache deletion to succeed")
         expect(sut, toRetrieve: .empty)
     }
     
     func test_delete_emptiesPreviouslyInsertedCache() {
         let sut = makeSUT()
-        
         insert((uniqueImageFeed().local, Date()), to: sut)
         
-        let exp = expectation(description: "Wait for deletion completion")
-        sut.deleteCachedFeed { deletionError in
-            XCTAssertNil(deletionError, "Expected non-empty cache deletion to succeeds")
-            exp.fulfill()
-        }
+        let deletionError = delete(from: sut)
         
-        wait(for: [exp], timeout: 1.0)
+        XCTAssertNil(deletionError, "Expected non-empty cache deletion to succeed")
         
         expect(sut, toRetrieve: .empty)
     }
@@ -204,6 +194,19 @@ class CodableFeedStoreTests: XCTestCase {
         let sut = CodableFeedStore(storeURL: storeURL ?? testSpecificStoreURL())
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
+    }
+    
+    private func delete(from sut: CodableFeedStore) -> Error? {
+        let exp = expectation(description: "Wait for deletion completion")
+        
+        var deletionError: Error?
+        sut.deleteCachedFeed { receiveDeletionError in
+            deletionError = receiveDeletionError
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 1.0)
+        return deletionError
     }
     
     @discardableResult
