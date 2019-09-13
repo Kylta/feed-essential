@@ -22,7 +22,7 @@ class EssentialFeedCacheIntegrationTests: XCTestCase {
         
         undoStoreSideEffects()
     }
-
+    
     func test_load_deliversNoItemsOnEmptyCache() {
         let sut = makeSUT()
         
@@ -66,8 +66,13 @@ class EssentialFeedCacheIntegrationTests: XCTestCase {
     
     private func save(_ feed: [FeedImage], with sut: LocalFeedLoader, file: StaticString = #file, line: UInt = #line) {
         let saveExp = expectation(description: "Wait for save command")
-        sut.save(feed) { saveError in
-            XCTAssertNil(saveError, "Expected to save successfully", file: file, line: line)
+        sut.save(feed) { saveResult in
+            switch saveResult {
+            case .success: break
+                
+            case let .failure(error):
+                XCTAssertNil(error, "Expected to save successfully", file: file, line: line)
+            }
             saveExp.fulfill()
         }
         wait(for: [saveExp], timeout: 1.0)
@@ -100,7 +105,7 @@ class EssentialFeedCacheIntegrationTests: XCTestCase {
     private func deleteStoreArtifacts() {
         try? FileManager.default.removeItem(at: testSpecificStoreURL())
     }
-
+    
     private func testSpecificStoreURL() -> URL {
         return cacheDirectory().appendingPathComponent("\(type(of: self)).store")
     }
