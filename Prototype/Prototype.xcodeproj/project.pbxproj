@@ -13,6 +13,7 @@
 		46BAEDE8232BE61100663FD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BAEDE6232BE61100663FD7 /* LaunchScreen.storyboard */; };
 		46BAEDF0232BEF0700663FD7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BAEDEF232BEF0700663FD7 /* FeedViewController.swift */; };
 		46BAEDF4232BF0C300663FD7 /* FeedImageViewModel+PrototypeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BAEDF3232BF0C300663FD7 /* FeedImageViewModel+PrototypeData.swift */; };
+		46BAEDF6232BF14F00663FD7 /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BAEDF5232BF14F00663FD7 /* FeedImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		46BAEDE9232BE61100663FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46BAEDEF232BEF0700663FD7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		46BAEDF3232BF0C300663FD7 /* FeedImageViewModel+PrototypeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedImageViewModel+PrototypeData.swift"; sourceTree = "<group>"; };
+		46BAEDF5232BF14F00663FD7 /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				46BAEDDD232BE60E00663FD7 /* AppDelegate.swift */,
+				46BAEDF5232BF14F00663FD7 /* FeedImageCell.swift */,
 				46BAEDEF232BEF0700663FD7 /* FeedViewController.swift */,
 				46BAEDF3232BF0C300663FD7 /* FeedImageViewModel+PrototypeData.swift */,
 				46BAEDE1232BE60E00663FD7 /* Main.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46BAEDF4232BF0C300663FD7 /* FeedImageViewModel+PrototypeData.swift in Sources */,
+				46BAEDF6232BF14F00663FD7 /* FeedImageCell.swift in Sources */,
 				46BAEDF0232BEF0700663FD7 /* FeedViewController.swift in Sources */,
 				46BAEDDE232BE60E00663FD7 /* AppDelegate.swift in Sources */,
 			);
